@@ -33,6 +33,10 @@ buildScan {
 
 
 allprojects {
+    tasks.withType(Test).configureEach {
+        forkEvery = 100
+    }
+
     dependencyLocking {
         lockAllConfigurations()
     }
